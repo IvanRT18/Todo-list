@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
-    <h1> <%= kindOfDay %> </h1>
-    <ul>
+    <div class="box" id="heading">
+        <h1> <%= kindOfDay %> </h1>
+    </div>
+
+    <div class="box">
         <% for( let index = 0; index < newEntries.length; index++ ) { %>
-        <li> <%= newEntries[index] %> </li>
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= newEntries[index] %> </p>
+            </div>
         <% } %>
-    </ul>
-    <form action="/" method="POST">
-        <input type="text" name="newItem" autofocus>
-        <button type="submit">Send</button>
-    </form>
+        <form action="/" method="POST" class="item">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
+            <button type="submit">+</button>
+        </form>
+    </div>
+        
+   
 </body>
 </html>
